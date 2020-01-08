@@ -1,0 +1,16 @@
+{% extends 'index.html'%}
+{%load static %}
+{% block content%}
+{% include 'navbar.html' %}
+{% block title%} <title>Add Entries</title>{%endblock%}
+<div>
+    <form action="{% url 'add_entries'%}" method="POST">
+        {% csrf_token %}
+        <div style="width:80%;margin-left:auto;margin-right:auto;margin-top:20px;">
+            {{form.text}}
+            <button style="margin-top:10px;background-color:rgb(42, 114, 148);" class="btn btn-primary pull-right">Add Entries <span class="glyphicon glyphicon-plus"></span></button>
+        </div>  
+</form>
+</div>
+
+{% endblock %}

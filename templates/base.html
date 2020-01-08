@@ -1,0 +1,25 @@
+{% extends 'index.html'%}
+{%load static %}
+{% block content%}
+{% include 'navbar.html' %}
+{% block title%} <title>Diary-Home</title>{%endblock%}
+<div style="margin-top:10px;border-bottom:1px solid rgb(218, 218, 218); width:80%; margin-left:auto;margin-right:auto;padding:5px;">
+    <h4 ><a href="{% url 'add_entries'%}">Add Entries <span class="glyphicon glyphicon-plus"></span></a></h4>     
+</div>
+<section>
+    {% for con in context %}
+        <div>
+            <table style="margin-top:5px; width:80%; margin-left:auto;margin-right:auto;"class="table table-striped">
+                <tr>
+                    <td><p>
+                        <strong>{{ con.date_posted}}</strong>
+                        <br>
+                        {{con.text}}
+                    </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}
