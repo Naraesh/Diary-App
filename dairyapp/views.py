@@ -7,6 +7,7 @@ def index(request):
     context=entry.objects.order_by('-date_posted')
     return render(request,'base.html',{'context':context})
 
+###testt
 def add(request):
     if request.method=='POST':
         form= EntryForm(request.POST)
